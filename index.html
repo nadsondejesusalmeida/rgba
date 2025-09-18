@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RGBA - Crie sua for facilmente</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+	<header>
+		<button type="button" id="theme-color-button">
+			<ion-icon name="sunny" class="theme-color-icon"></ion-icon>
+		</button>
+	</header>
+	
+	<main>
+		<div id="rgb-container">
+			<div id="color-channels">
+				<div class="item">
+					<p class="light-type-text">R</p>
+					<input type="range" name="r" id="red-light-control" class="light-intensity-control" value="0" step="1" min="0" max="255" />
+					<p class="light-type-value">0</p>
+				</div>
+				
+				<div class="item">
+					<p class="light-type-text">G</p>
+					<input type="range" name="g" id="green-light-control" class="light-intensity-control" value="0" step="1" min="0" max="255" />
+					<p class="light-type-value">0</p>
+				</div>
+				
+				<div class="item">
+					<p class="light-type-text">B</p>
+					<input type="range" name="b" id="blue-light-control" class="light-intensity-control" value="0" step="1" min="0" max="255" />
+					<p class="light-type-value">0</p>
+				</div>
+				
+				<div class="item">
+					<p class="opacity-type">A</p>
+					<input type="range" name="a" id="opacity-control" value="1" step="0.1" min="0" max="1" />
+					<p class="light-type-value">1</p>
+				</div>
+			</div> <!-- Fim #color-channels -->
+			
+			<div id="rgb-display">
+				<input type="text" value="rgba(0, 0, 0, 1)" readonly />
+				<button type="button" id="rgb-copy-button">
+					<ion-icon name="copy-outline"></ion-icon>
+				</button>
+			</div>
+		</div>
+	</main>
+	
+	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
