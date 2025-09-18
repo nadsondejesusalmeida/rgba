@@ -80,6 +80,7 @@ main {
 #rgba-container {
 	padding: 15px;
 	width: 95%;
+	max-width: 750px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -99,12 +100,15 @@ main {
 
 #color-channels .item {
 	width: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: 25px 8fr 1fr;
+	justify-items: start;
 	align-items: center;
 }
 
 #color-channels .item .light-type-text,
 #color-channels .item .opacity-type {
+	margin-right: 10px;
 	font-size: 1.5em;
 	font-weight: bold;
 	user-select: none;
@@ -121,7 +125,6 @@ main {
 }
 
 #color-channels .item input[type="range"] {
-	margin: 0 10px;
 	width: 100%;
 	height: 5px;
 	background-image: linear-gradient(to right, var(--range-progress-color) 0%, var(--trick-color) 0%);
@@ -143,7 +146,8 @@ main {
 }
 
 #color-channels .item .light-type-value {
-	min-width: 25px;
+	margin-left: 10px;
+	min-width: 5%;
 }
 
 #rgba-display {
@@ -155,16 +159,12 @@ main {
 	border-top: 1px dashed var(--text-color);
 }
 
-#rgba-display input[readonly] {
+#rgba-display-text {
 	font-size: 1em;
 	font-weight: 500;
 	background-color: transparent;
 	color: var(--text-color);
 	border: none;
-}
-
-#rgba-display input[readonly]:focus {
-	outline: none;
 }
 
 #rgba-copy-button {

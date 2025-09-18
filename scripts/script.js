@@ -67,7 +67,7 @@ let blueLightValue = lightIntensityControl[2].value;
 let opacityValue = opacityControl.value;
 
 body.style.backgroundColor = rgba(redLightValue, greenLightValue, blueLightValue, opacityValue);
-rgbaDisplayText.value = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
+rgbaDisplayText.innerText = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 
 lightIntensityControl.forEach((item, index) => {
 	lightIntensityControl[index].style.backgroundImage = setRangeColor('to right', rangeProgressColor, trickColor, lightIntensityControl[index].value * rgbRangeProgressValue);
@@ -86,7 +86,7 @@ lightIntensityControl.forEach((item, index) => {
 		
 		body.style.backgroundColor = rgba(redLightValue, greenLightValue, blueLightValue, opacityValue);
 		
-		rgbaDisplay.querySelector('#rgba-display-text').value = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
+		rgbaDisplayText.innerText = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 		
 		lightTypeValue[index].textContent = `${lightIntensityControl[index].value}`;
 		
@@ -108,7 +108,7 @@ opacityControl.addEventListener('input', (e) => {
 	
 	body.style.backgroundColor = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 	
-	rgbaDisplay.querySelector('#rgba-display-text').value = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
+	rgbaDisplayText.innerText = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 	
 	localStorage.setItem('opacityValue', opacityValue);
 });
@@ -120,18 +120,5 @@ rgbaCopyButton.addEventListener('click', function() {
 		rgbaCopyButton.style.borderColor = 'transparent';
 	}, 1000);
 	
-	const oldInput = rgbaDisplay.querySelector('#rgba-display-text');
-	const oldInputID = oldInput.id;
-	oldInput.select();
-	oldInput.setSelectionRange(0, 99999);
-	document.execCommand('copy');
-	oldInput.remove();
-	
-	const newInput = document.createElement('input');
-	newInput.setAttribute('type', 'text');
-	newInput.setAttribute('id', oldInputID);
-	newInput.setAttribute('value', rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue)));
-	newInput.setAttribute('readonly', '');
-	
-	rgbaDisplay.insertBefore(newInput, rgbaDisplay.firstChild);
+	navigator.clipboard.writeText(rgbaDisplayText.innerText);
 })
