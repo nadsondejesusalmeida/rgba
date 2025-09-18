@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RGBA - Crie sua for facilmente</title>
-	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="styles/style.css" type="text/css" media="all" />
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -17,7 +17,7 @@
 	</header>
 	
 	<main>
-		<div id="rgb-container">
+		<div id="rgba-container">
 			<div id="color-channels">
 				<div class="item">
 					<p class="light-type-text">R</p>
@@ -44,15 +44,15 @@
 				</div>
 			</div> <!-- Fim #color-channels -->
 			
-			<div id="rgb-display">
-				<input type="text" value="rgba(0, 0, 0, 1)" readonly />
-				<button type="button" id="rgb-copy-button">
+			<div id="rgba-display">
+				<input type="text" id="rgba-display-text" value="rgba(0, 0, 0, 1)" readonly />
+				<button type="button" id="rgba-copy-button">
 					<ion-icon name="copy-outline"></ion-icon>
 				</button>
 			</div>
 		</div>
 	</main>
 	
-	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/script.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
