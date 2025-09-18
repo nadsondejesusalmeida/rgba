@@ -12,8 +12,8 @@ const rgbaCopyButton = document.getElementById('rgba-copy-button');
 const rgbRangeProgressValue = 100 / 255;
 const opacityRangeProgressValue = 100 / 1;
 
-const rangeProgressColor = '#CA0030';
-const trickColor = '#A0A0A0';
+const rangeProgressColor = 'var(--range-progress-color)';
+const trickColor = 'var(--trick-color)';
 
 const themeSystem = localStorage.getItem('themeSystem') || 'light';
 
