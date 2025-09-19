@@ -1,8 +1,6 @@
 @charset 'UTF-8';
 
 :root {
-	--theme-icon-color: #FFF900;
-	--theme-icon-color-hover: #B5B51E;
 	--text-color: #000000;
 	--background-color: #FFFFFF;
 	--card-background: #EFEFEF;
@@ -11,8 +9,6 @@
 }
 
 [data-theme="dark"] {
-	--theme-icon-color: #163FE3;
-	--theme-icon-color-hover: #4444E7;
 	--text-color: #FFFFFF;
 	--background-color: #000000;
 	--card-background: #373232;
@@ -53,15 +49,15 @@ header {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--text-color);
-	color: var(--theme-icon-color);
+	color: var(--background-color);
 	border: none;
 	border-radius: 50%;
-	transition: background-color 0.5s ease, color 9.5s ease;
+	transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #theme-color-button:hover {
 	background-color: #757575;
-	color: var(--theme-icon-color-hover);
+	color: var(--text-color);
 }
 
 #theme-color-icon {
