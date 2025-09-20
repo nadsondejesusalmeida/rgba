@@ -1,6 +1,4 @@
-const html = document.documentElement;
-const body = document.querySelector('body');
-const themeColorButton = document.getElementById('theme-color-button');
+const themeColorButton = document.getElementById('theme-color-button'); 
 const lightIntensityControl = document.querySelectorAll('.light-intensity-control');
 const opacityControl = document.getElementById('opacity-control');
 const lightTypeValue = document.querySelectorAll('.light-type-value');
@@ -21,7 +19,7 @@ function setThemeSystem(theme) {
 	const lightThemeIcon = `<ion-icon name="sunny" class="theme-color-icon"></ion-icon>`;
 	const darkThemeIcon = `<ion-icon name="moon" class="theme-color-icon"></ion-icon>`;
 	
-	html.setAttribute('data-theme', theme);
+	document.documentElement.setAttribute('data-theme', theme);
 	
 	if (theme === 'light') {
 		themeColorButton.innerHTML = lightThemeIcon;
@@ -66,7 +64,7 @@ let greenLightValue = lightIntensityControl[1].value;
 let blueLightValue = lightIntensityControl[2].value;
 let opacityValue = opacityControl.value;
 
-body.style.backgroundColor = rgba(redLightValue, greenLightValue, blueLightValue, opacityValue);
+document.querySelector('body').style.backgroundColor = rgba(redLightValue, greenLightValue, blueLightValue, opacityValue);
 rgbaDisplayText.innerText = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 
 lightIntensityControl.forEach((item, index) => {
@@ -84,7 +82,7 @@ lightIntensityControl.forEach((item, index) => {
 		blueLightValue = lightIntensityControl[2].value;
 		opacityValue = opacityControl.value;
 		
-		body.style.backgroundColor = rgba(redLightValue, greenLightValue, blueLightValue, opacityValue);
+		document.querySelector('body').style.backgroundColor = rgba(redLightValue, greenLightValue, blueLightValue, opacityValue);
 		
 		rgbaDisplayText.innerText = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 		
@@ -106,7 +104,7 @@ opacityControl.addEventListener('input', (e) => {
 	opacityControl.style.backgroundImage = setRangeColor('to right', rangeProgressColor, trickColor, opacityValue * opacityRangeProgressValue);
 	lightTypeValue[3].textContent = opacityValue;
 	
-	body.style.backgroundColor = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
+	document.querySelector('body').style.backgroundColor = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 	
 	rgbaDisplayText.innerText = rgbaToRgb(rgba(redLightValue, greenLightValue, blueLightValue, opacityValue));
 	
