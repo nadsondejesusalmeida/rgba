@@ -135,9 +135,10 @@ main {
 }
 
 #color-channels .item input[type="range"]::-moz-range-thumb {
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	background-color: var(--range-progress-color);
+	border: none;
 	border-radius: 50%;
 }
 
