@@ -1,4 +1,3 @@
-const themeColorButton = document.getElementById('theme-color-button'); 
 const lightIntensityControl = document.querySelectorAll('.light-intensity-control');
 const opacityControl = document.getElementById('opacity-control');
 const lightTypeValue = document.querySelectorAll('.light-type-value');
@@ -12,21 +11,6 @@ const opacityRangeProgressValue = 100 / 1;
 
 const rangeProgressColor = 'var(--range-progress-color)';
 const trickColor = 'var(--trick-color)';
-
-const themeSystem = localStorage.getItem('themeSystem') || 'light';
-
-function setThemeSystem(theme) {
-	const lightThemeIcon = `<ion-icon name="sunny" class="theme-color-icon"></ion-icon>`;
-	const darkThemeIcon = `<ion-icon name="moon" class="theme-color-icon"></ion-icon>`;
-	
-	document.documentElement.setAttribute('data-theme', theme);
-	
-	if (theme === 'light') {
-		themeColorButton.innerHTML = lightThemeIcon;
-	} else {
-		themeColorButton.innerHTML = darkThemeIcon;
-	}
-}
 
 function setRangeColor(direction, firstColor, secondColor, value) {
 	return `linear-gradient(${direction}, ${firstColor} ${value}%, ${secondColor} ${value}%)`;
@@ -43,16 +27,6 @@ function rgbaToRgb(text) {
 		return text;
 	}
 }
-
-themeColorButton.addEventListener('click', (e) => {
-	const oldTheme = localStorage.getItem('themeSystem') || 'light';
-	const newTheme = oldTheme === 'light' ? 'dark' : 'light';
-	
-	localStorage.setItem('themeSystem', newTheme);
-	setThemeSystem(newTheme);
-});
-
-setThemeSystem(themeSystem);
 
 lightIntensityControl[0].value = localStorage.getItem('redLightValue') || 0;
 lightIntensityControl[1].value = localStorage.getItem('greenLightValue') || 0;
